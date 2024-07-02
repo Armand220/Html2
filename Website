@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Games Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('https://cataas.com/cat') no-repeat center center fixed;
+            background-size: cover;
+        }
+        .menu {
+            position: relative; /* Position relative for absolute positioning */
+            width: 300px;
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+            overflow: hidden; /* Hide overflow content */
+        }
+        .menu h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .menu ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .menu ul li {
+            margin-bottom: 10px;
+        }
+        .menu ul li a {
+            display: block;
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: rgba(0, 123, 255, 0.8); /* Semi-transparent blue background */
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .menu ul li a:hover {
+            background-color: #007bff;
+            color: #fff;
+        }
+        .buttons-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .accessibility-button, .credits-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .accessibility-button:hover, .credits-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body class="cat-background">
+    <div class="menu">
+        <h2>Online Games Menu</h2>
+        <ul>
+            <li><a href="https://www.miniclip.com/games/en/" target="_blank">Miniclip</a></li>
+            <li><a href="https://www.pogo.com/" target="_blank">Pogo</a></li>
+            <li><a href="https://www.kongregate.com/" target="_blank">Kongregate</a></li>
+            <li><a href="https://www.addictinggames.com/" target="_blank">Addicting Games</a></li>
+            <li><a href="https://www.armorgames.com/" target="_blank">Armor Games</a></li>
+            <li><a href="https://www.roblox.com/" target="_blank">Roblox</a></li>
+        </ul>
+        <div class="buttons-container">
+            <button class="accessibility-button" onclick="changeTextColor()">Dyslexic Mode</button>
+            <button class="credits-button" onclick="toggleCredits()">Credits</button>
+        </div>
+        <div class="credits-container" id="creditsContainer">
+            <div class="credits">
+                <p>Credits:</p>
+                <p>Armand220 - Lead Developer</p>
+                <p>Julia333 - UI/UX Designer</p>
+                <p>MaxPower - Game Tester</p>
+                <p>Samantha90 - Marketing</p>
+                <!-- Add more credits as needed -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function changeTextColor() {
+            var color = prompt("Enter a color (name, hex, or rgb):");
+            if (color) {
+                var links = document.querySelectorAll('.menu ul li a');
+                links.forEach(function(link) {
+                    link.style.color = color;
+                });
+            }
+        }
+
+        function toggleCredits() {
+            var creditsContainer = document.getElementById('creditsContainer');
+            creditsContainer.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>
